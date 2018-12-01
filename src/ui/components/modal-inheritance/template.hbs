@@ -1,0 +1,16 @@
+<div id="{{this.id}}">
+  Modal opened: {{this.opened}}
+
+  {{#if (has-block-params)}}
+    {{yield (hash
+      header=(component 'header')
+      body=(component 'body')
+    )}}
+  {{else if (has-block)}}
+    <Body>{{yield}}</Body>
+  {{else}}
+    <Header></Header>
+
+    <Body></Body>
+  {{/if}}
+</div>
