@@ -8,6 +8,12 @@ let moduleConfig = buildResolverConfig(config.modulePrefix);
  * to add support for them.
  */
 
+Object.assign(moduleConfig.types, {
+	'component-manager': {definitiveCollection: 'main'}
+});
+
+moduleConfig.collections.main.types.push('component-manager');
+
 export default Resolver.extend({
   config: moduleConfig
 });

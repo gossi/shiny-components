@@ -1,0 +1,36 @@
+<h3>Modal (Inheritance)</h3>
+
+<h4>ModalInheritance (block)</h4>
+<Modal>
+  bla
+</Modal>
+
+
+<h4>ModalInheritance (block params)</h4>
+<Modal as |modal|>
+  <modal.header>
+    header
+  </modal.header>
+
+  <modal.body>
+    body
+  </modal.body>
+</Modal>
+
+<h4>ModalDialogInheritance (block)</h4>
+
+<ModalDialog @open={{true}}>
+huhu
+</ModalDialog>
+
+
+<h4>ModalDialogInheritance (block params)</h4>
+<ModalDialog as |modal|>
+  <modal.header>
+    header
+  </modal.header>
+
+  <modal.body>
+    body
+  </modal.body>
+</ModalDialog>

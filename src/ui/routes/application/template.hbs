@@ -1,40 +1,9 @@
-<h2 id="title">Welcome to Ember</h2>
+<h1>Shiny Components</h1>
+<p>Design Patterns for Components in Ember</p>
+
+<center>
+  {{#link-to 'inheritance'}}Inheritance{{/link-to}}
+</center>
 
 {{outlet}}
 
-<h3>Modal (Inheritance)</h3>
-
-<h4>ModalInheritance (block)</h4>
-<ModalInheritance>
-  bla
-</ModalInheritance>
-
-
-<h4>ModalInheritance (block params)</h4>
-<ModalInheritance as |modal|>
-  <modal.header>
-    header
-  </modal.header>
-
-  <modal.body>
-    body
-  </modal.body>
-</ModalInheritance>
-
-<h4>ModalDialogInheritance (block)</h4>
-
-<ModalDialogInheritance @open={{true}}>
-huhu
-</ModalDialogInheritance>
-
-
-<h4>ModalDialogInheritance (block params)</h4>
-<ModalDialogInheritance as |modal|>
-  <modal.header>
-    header
-  </modal.header>
-
-  <modal.body>
-    body
-  </modal.body>
-</ModalDialogInheritance>
