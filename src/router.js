@@ -8,6 +8,7 @@ const Router = EmberRouter.extend({
 
 Router.map(function () {
   this.route('inheritance');
+  this.route('sparkles');
 });
 
 export default Router;
