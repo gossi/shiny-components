@@ -24,3 +24,28 @@ nav {
 main {
   grid-area: main;
 }
+
+.demo {
+  display: grid;
+  grid-template-columns: auto 300px;
+}
+
+.good {
+
+}
+
+.good h3 {
+  color: #080;
+}
+
+.good h3::before {
+  content: '✅ '
+}
+
+.bad h3 {
+  color: #800;
+}
+
+.bad h3::before {
+  content: '❌ '
+}

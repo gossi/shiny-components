@@ -1,36 +1,53 @@
-<h3>Modal (Inheritance)</h3>
-
-<h4>ModalInheritance (block)</h4>
-<Modal>
-  bla
-</Modal>
+<h2>Inheritance</h2>
 
 
-<h4>ModalInheritance (block params)</h4>
-<Modal as |modal|>
-  <modal.header>
-    header
-  </modal.header>
+<section class="demo">
+  <article>
+    <h3>Modal (Inheritance)</h3>
 
-  <modal.body>
-    body
-  </modal.body>
-</Modal>
-
-<h4>ModalDialogInheritance (block)</h4>
-
-<ModalDialog @open={{true}}>
-huhu
-</ModalDialog>
+    <h4>ModalInheritance (block)</h4>
+    <Modal>
+      bla
+    </Modal>
 
 
-<h4>ModalDialogInheritance (block params)</h4>
-<ModalDialog as |modal|>
-  <modal.header>
-    header
-  </modal.header>
+    <h4>ModalInheritance (block params)</h4>
+    <Modal as |modal|>
+      <modal.header>
+        header
+      </modal.header>
 
-  <modal.body>
-    body
-  </modal.body>
-</ModalDialog>
+      <modal.body>
+        body
+      </modal.body>
+    </Modal>
+
+    <h4>ModalDialogInheritance (block)</h4>
+
+    <ModalDialog @open={{true}}>
+    huhu
+    </ModalDialog>
+
+
+    <h4>ModalDialogInheritance (block params)</h4>
+    <ModalDialog as |modal|>
+      <modal.header>
+        header
+      </modal.header>
+
+      <modal.body>
+        body
+      </modal.body>
+    </ModalDialog>
+
+  </article>
+  <aside>
+    <div class="good">
+      <h3>Do</h3>
+    </div>
+
+    <div class="bad">
+      <h3>Don't</h3>
+    </div>
+  </aside>
+</section>
