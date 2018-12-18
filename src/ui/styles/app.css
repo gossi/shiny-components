@@ -71,6 +71,10 @@ body {
   article {
     overflow-x: hidden;
     max-width: calc(100vw - 300px - 120px);
+
+    h3 {
+      border-bottom: 1px solid lightgrey;
+    }
   }
 
   aside {

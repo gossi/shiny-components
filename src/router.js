@@ -10,13 +10,12 @@ Router.map(function () {
   this.route('terminology', function () {
     this.route('classification');
   });
+
   this.route('patterns', function () {
     this.route('dom-api');
 
-    this.route('composites', function () {
-      this.route('inheritance');
-      this.route('composition');
-    });
+    this.route('inheritance');
+    this.route('composition');
   });
 
   this.route('best-practices', function () {

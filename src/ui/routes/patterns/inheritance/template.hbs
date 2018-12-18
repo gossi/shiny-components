@@ -8,6 +8,13 @@
 
 <section class="demo">
   <article>
+    <h3>Objections</h3>
+
+    <ul>
+      <li>Put all logic into the parent component</li>
+      <li>Extend a child from the parent and adjust the specific logic</li>
+      <li>Inherit templates from the parent; overwrite where necessary</li>
+    </ul>
 
     <h3>Setup</h3>
 
@@ -18,22 +25,34 @@
     <h4>Modal Component</h4>
     <Tabs as |tabs|>
       <tabs.page @title="template.hbs">
-        <CodeSnippet @name="ui/routes/inheritance/-components/modal/template.hbs"/>
+        <CodeSnippet @name="ui/routes/patterns/inheritance/-components/modal/template.hbs"/>
       </tabs.page>
 
       <tabs.page @title="component.ts">
-        <CodeSnippet @name="ui/routes/inheritance/-components/modal/component.ts"/>
+        <CodeSnippet @name="ui/routes/patterns/inheritance/-components/modal/component.ts"/>
+      </tabs.page>
+
+      <tabs.page @title="header.hbs">
+        <CodeSnippet @name="ui/routes/patterns/inheritance/-components/modal/header/template.hbs"/>
+      </tabs.page>
+
+      <tabs.page @title="body.hbs">
+        <CodeSnippet @name="ui/routes/patterns/inheritance/-components/modal/body/template.hbs"/>
       </tabs.page>
     </Tabs>
 
     <h4>Modal Dialog Component</h4>
     <Tabs as |tabs|>
       <tabs.page @title="template.ts">
-        <CodeSnippet @name="ui/routes/inheritance/-components/modal-dialog/template.ts"/>
+        <CodeSnippet @name="ui/routes/patterns/inheritance/-components/modal-dialog/template.ts"/>
       </tabs.page>
 
       <tabs.page @title="component.ts">
-        <CodeSnippet @name="ui/routes/inheritance/-components/modal-dialog/component.ts"/>
+        <CodeSnippet @name="ui/routes/patterns/inheritance/-components/modal-dialog/component.ts"/>
+      </tabs.page>
+
+      <tabs.page @title="header.hbs">
+        <CodeSnippet @name="ui/routes/patterns/inheritance/-components/modal-dialog/header/template.hbs"/>
       </tabs.page>
     </Tabs>
 
@@ -104,6 +123,13 @@
         </ModalDialog>
       </tabs.page>
     </Tabs>
+
+    <h3>Results</h3>
+    <ul>
+      <li>✅ Put all logic into the parent component</li>
+      <li>✅ Extend a child from the parent and adjust the specific logic</li>
+      <li>❌ Inherit templates from the parent; overwrite where necessary</li>
+    </ul>
   </article>
   <aside>
     <div class="good">

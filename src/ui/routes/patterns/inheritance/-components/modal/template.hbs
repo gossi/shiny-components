@@ -3,8 +3,8 @@
 
   {{#if (has-block-params)}}
     {{yield (hash
-      header=(component 'header')
-      body=(component 'body')
+      header=(component 'header' modal=this)
+      body=(component 'body' modal=this)
     )}}
   {{else if (has-block)}}
     <Body>{{yield}}</Body>
