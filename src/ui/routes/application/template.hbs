@@ -4,11 +4,21 @@
 </header>
 
 <nav>
-  <p>Patterns</p>
-  {{#link-to 'inheritance'}}Inheritance{{/link-to}}
+  <ul>
+    <li class="section">Terminology</li>
+    <li>{{#link-to 'terminology.classification'}}Component Classification{{/link-to}}</li>
+    <li class="section">Patterns</li>
+    <li class="topic">{{#link-to 'patterns'}}Composite{{/link-to}}</li>
+    {{!-- <li>{{#link-to 'patterns.composites.inheritance'}}Inheritance{{/link-to}}</li> --}}
+    {{!-- <li>{{#link-to 'patterns.composites.composition'}}Composition{{/link-to}}</li> --}}
+    <li class="topic">{{#link-to 'patterns.dom-api'}}DOM API{{/link-to}}</li>
+    <li>Loosly Coupled</li>
+    <li>Strongly Coupled</li>
+    <li class="section">Best Practices</li>
+    <li>{{#link-to 'best-practices.sparkles'}}Sparkles{{/link-to}}</li>
+    <li>Singel</li>
+  </ul>
 
-  <p>Best Bractices</p>
-  {{#link-to 'sparkles'}}Sparkles{{/link-to}}
 </nav>
 
 <main>

@@ -4,12 +4,23 @@ const EmberApp = require('ember-cli/lib/broccoli/ember-app');
 
 module.exports = function(defaults) {
   let app = new EmberApp(defaults, {
-    snippetPaths: ['src'],
+    snippetPaths: ['src', 'snippets'],
     snippetSearchPaths: ['src'],
 
     sourcemaps: {
       enabled: true,
       extensions: ['js', 'css']
+    },
+
+    cssModules: {
+      plugins: {
+        before: [
+          require('postcss-nested')
+        ],
+        after: [
+          require('autoprefixer')('last 2 versions')
+        ]
+      }
     }
     // Add options here
   });

@@ -7,8 +7,22 @@ const Router = EmberRouter.extend({
 });
 
 Router.map(function () {
-  this.route('inheritance');
-  this.route('sparkles');
+  this.route('terminology', function () {
+    this.route('classification');
+  });
+  this.route('patterns', function () {
+    this.route('dom-api');
+
+    this.route('composites', function () {
+      this.route('inheritance');
+      this.route('composition');
+    });
+  });
+
+  this.route('best-practices', function () {
+    this.route('sparkles');
+  });
+
 });
 
 export default Router;

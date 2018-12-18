@@ -1,0 +1,117 @@
+<ol class="breadcrumbs">
+  <li>Patterns</li>
+  <li>Stitching</li>
+  <li>Inheritance</li>
+</ol>
+
+<h2>Inheritance</h2>
+
+<section class="demo">
+  <article>
+
+    <h3>Setup</h3>
+
+    <p>Modal structure on the file system, using MU.</p>
+
+    <CodeSnippet @name="inheritance/modal-structure.txt"/>
+
+    <h4>Modal Component</h4>
+    <Tabs as |tabs|>
+      <tabs.page @title="template.hbs">
+        <CodeSnippet @name="ui/routes/inheritance/-components/modal/template.hbs"/>
+      </tabs.page>
+
+      <tabs.page @title="component.ts">
+        <CodeSnippet @name="ui/routes/inheritance/-components/modal/component.ts"/>
+      </tabs.page>
+    </Tabs>
+
+    <h4>Modal Dialog Component</h4>
+    <Tabs as |tabs|>
+      <tabs.page @title="template.ts">
+        <CodeSnippet @name="ui/routes/inheritance/-components/modal-dialog/template.ts"/>
+      </tabs.page>
+
+      <tabs.page @title="component.ts">
+        <CodeSnippet @name="ui/routes/inheritance/-components/modal-dialog/component.ts"/>
+      </tabs.page>
+    </Tabs>
+
+
+
+    <h3>Tests</h3>
+
+    <h4>Modal (block)</h4>
+    <Tabs as |tabs|>
+      <tabs.page @title="template.hbs">
+        <CodeSnippet @name="inheritance/modal-block.hbs"/>
+      </tabs.page>
+
+      <tabs.page @title="Result">
+        <Modal>
+          bla
+        </Modal>
+      </tabs.page>
+    </Tabs>
+
+    <h4>Modal (block params)</h4>
+    <Tabs as |tabs|>
+      <tabs.page @title="template.hbs">
+        <CodeSnippet @name="inheritance/modal-block-params.hbs"/>
+      </tabs.page>
+
+      <tabs.page @title="Result">
+        <Modal as |modal|>
+          <modal.header>
+            header
+          </modal.header>
+
+          <modal.body>
+            body
+          </modal.body>
+        </Modal>
+      </tabs.page>
+    </Tabs>
+
+    <h4>ModalDialog (block)</h4>
+    <Tabs as |tabs|>
+      <tabs.page @title="template.hbs">
+        <CodeSnippet @name="inheritance/modal-dialog-block.hbs"/>
+      </tabs.page>
+
+      <tabs.page @title="Result">
+        <ModalDialog @open={{true}}>
+          huhu
+        </ModalDialog>
+      </tabs.page>
+    </Tabs>
+
+    <h4>ModalDialog (block params)</h4>
+    <Tabs as |tabs|>
+      <tabs.page @title="template.hbs">
+        <CodeSnippet @name="inheritance/modal-dialog-block-params.hbs"/>
+      </tabs.page>
+
+      <tabs.page @title="Result">
+        <ModalDialog as |modal|>
+          <modal.header>
+            header
+          </modal.header>
+
+          <modal.body>
+            body
+          </modal.body>
+        </ModalDialog>
+      </tabs.page>
+    </Tabs>
+  </article>
+  <aside>
+    <div class="good">
+      <h3>Do</h3>
+    </div>
+
+    <div class="bad">
+      <h3>Don't</h3>
+    </div>
+  </aside>
+</section>

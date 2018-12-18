@@ -1,3 +1,24 @@
 .tabbar {
+  list-style-type: none;
+  display: flex;
+  align-items: flex-start;
+  padding: 0;
+  margin-bottom: 0;
+}
 
+.tabbar li {
+  padding: 10px;
+  cursor: pointer;
+}
+
+.tabbar li.active {
+  background-color: #f8f8f8;
+}
+
+.tabcontainer {
+
+}
+
+.tabcontainer pre {
+  margin-top: 0;
 }

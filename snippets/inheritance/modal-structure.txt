@@ -1,0 +1,10 @@
+modal/
+  body/
+    template.hbs
+  header/
+    template.hbs
+modal-dialog/
+  header/
+    template.hbs
+  component.ts
+  template.ts

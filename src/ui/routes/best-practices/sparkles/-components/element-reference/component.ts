@@ -6,7 +6,7 @@ interface Args {
   id?: string
 }
 
-export default class DomAccessComponent extends SparklesComponent<Args> {
+export default class ElementReferenceComponent extends SparklesComponent<Args> {
   @arg id: string = guidFor(this);
 
   didInsertElement() {
