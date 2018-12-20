@@ -12,6 +12,7 @@ Router.map(function () {
   });
 
   this.route('patterns', function () {
+    this.route('high-order-components');
     this.route('dom-api');
 
     this.route('inheritance');

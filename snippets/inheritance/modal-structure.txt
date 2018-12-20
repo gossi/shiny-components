@@ -3,6 +3,8 @@ modal/
     template.hbs
   header/
     template.hbs
+  component.ts
+  template.hbs
 modal-dialog/
   header/
     template.hbs
