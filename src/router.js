@@ -7,21 +7,27 @@ const Router = EmberRouter.extend({
 });
 
 Router.map(function () {
-  this.route('terminology', function () {
-    this.route('classification');
+  this.route('best-practices', function () {
+    this.route('sparkles');
+    this.route('singel');
+    this.route('component-classification');
+    this.route('naming-conventions');
   });
 
   this.route('patterns', function () {
+    this.route('component-types');
+    this.route('presentational-components');
+    this.route('contextual-components');
+    this.route('container-components');
     this.route('high-order-components');
+
     this.route('dom-api');
 
     this.route('inheritance');
     this.route('composition');
   });
 
-  this.route('best-practices', function () {
-    this.route('sparkles');
-  });
+
 
 });
 

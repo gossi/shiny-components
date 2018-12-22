@@ -1,3 +1,6 @@
+@value navWidth: 225px;
+@value asideWidth: 300px;
+
 html, body {
   width: 100vw;
   height: 100vh;
@@ -13,7 +16,7 @@ body {
   grid-template:
     "header header" 120px
     "nav main"
-    / 200px auto;
+    / navWidth auto;
 }
 
 :global {
@@ -40,7 +43,8 @@ body {
         margin-left: -20px;
         border-bottom: 1px solid lightgrey;
         margin-bottom: 10px;
-        margin-top: 10px;
+        margin-top: 23px;
+        font-weight: bold;
 
 
         &:first-child {
@@ -67,14 +71,8 @@ body {
 
   section {
     display: grid;
-    /* grid-template-columns: auto 300px; */
-
-    /* grid-template:
-      "header header" 70px
-      "article aside"
-      / auto 300px; */
     grid-template-rows: 70px auto;
-    grid-template-columns: auto 300px;
+    grid-template-columns: auto asideWidth;
 
     & > header {
       grid-column: 1 / span 2;
@@ -83,7 +81,7 @@ body {
     & > article {
       /* grid-area: article; */
       overflow-x: hidden;
-      max-width: calc(100vw - 120px);
+      max-width: calc(100vw - navWidth);
       grid-column: 1 / span 2;
 
       h3 {
@@ -100,7 +98,7 @@ body {
     aside ~ article {
       grid-row: 2;
       grid-column: 1;
-      max-width: calc(100vw - 300px - 120px);
+      max-width: calc(100vw - asideWidth - navhWidth);
       /* grid-column: 1; */
     }
   }

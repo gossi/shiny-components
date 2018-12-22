@@ -4,6 +4,5 @@ export interface ModalArgs {
   open?: boolean;
 }
 
-export default class ModalInheritanceComponent<A> extends SparklesComponent<A extends ModalArgs> {
-
+export default class ModalInheritanceComponent<T extends ModalArgs> extends SparklesComponent<T> {
 }

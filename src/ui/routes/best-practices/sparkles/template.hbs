@@ -1,36 +1,56 @@
-<ol class="breadcrumbs">
-  <li>Best Practices</li>
-  <li>Sparkles</li>
-</ol>
+<section>
+  <header>
+    <ol class="breadcrumbs">
+      <li>Best Practices</li>
+      <li>Sparkles</li>
+    </ol>
 
-<h2>Sparkles</h2>
+    <h2>Sparkles</h2>
+  </header>
 
-<h3>Argument Defaults</h3>
+  <article>
+    <h3>Argument Defaults</h3>
 
-<p>The glimmer VM doesn't provide @argument defaults - that is by design. To compensate this, use the <code>@arg</code> decorator from <a href="https://github.com/gossi/sparkles-decorators">sparkles-decorators</a>. For an example
-see <a href="#element-reference">Element Reference</a> below.</p>
+    <h4>Problem</h4>
 
-<h3 id="element-reference">Element Reference</h3>
+    The glimmer VM doesn't provide <code>@argument</code> defaults - that is by design.
 
-<Tabs as |tabs|>
-  <tabs.page @title="component.ts">
-    <CodeSnippet @name="ui/routes/sparkles/-components/element-reference/component.ts"/>
-  </tabs.page>
+    <h4>Solution</h4>
+    Use the <code>@arg</code> decorator from <a href="https://github.com/gossi/sparkles-decorators">sparkles-decorators</a>.
 
-  <tabs.page @title="template.hbs">
-    <CodeSnippet @name="ui/routes/sparkles/-components/element-reference/template.hbs"/>
-  </tabs.page>
-</Tabs>
+    <h4>Example</h4>
+    See <a href="#element-reference">Element Reference</a> below.
 
-<h4>Example</h4>
+    <h3 id="element-reference">Element Reference</h3>
 
-Taken the code from above.
+    <h4>Problem</h4>
+    In glimmer, components can access <code>this.bounds</code> to access the first and last element from the component at root level (which can be the same one).
+    Sparkles as proof-of-concept implementation do not provide that access. The official solution to this is being discussed in <a href="https://github.com/emberjs/rfcs/pull/415">RFC #415: Render Element Modifiers</a>.
+    Until this is finalized and implemented, we need to rely on a workaround to access elements from the component.
 
-<Tabs as |tabs|>
-  <tabs.page @title="template.hbs">
-    <CodeSnippet @name="sparkles/element-reference/template.hbs"/>
-  </tabs.page>
-  <tabs.page @title="HTML">
-    <CodeSnippet @name="sparkles/element-reference/output.html"/>
-  </tabs.page>
-</Tabs>
+    <h4>Workaround</h4>
+
+    <Tabs as |tabs|>
+      <tabs.page @title="component.ts">
+        <CodeSnippet @name="ui/routes/best-practices/sparkles/-components/element-reference/component.ts"/>
+      </tabs.page>
+
+      <tabs.page @title="template.hbs">
+        <CodeSnippet @name="ui/routes/best-practices/sparkles/-components/element-reference/template.hbs"/>
+      </tabs.page>
+    </Tabs>
+
+    <h4>Example</h4>
+
+    Taken the code from above.
+
+    <Tabs as |tabs|>
+      <tabs.page @title="template.hbs">
+        <CodeSnippet @name="sparkles/element-reference/template.hbs"/>
+      </tabs.page>
+      <tabs.page @title="HTML">
+        <CodeSnippet @name="sparkles/element-reference/output.html"/>
+      </tabs.page>
+    </Tabs>
+  </article>
+</section>
