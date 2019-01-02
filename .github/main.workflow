@@ -4,12 +4,12 @@ workflow "Main" {
 }
 
 action "Install" {
-  uses = "docker://culturehq/actions-yarn:latest"
+  uses = "nuxt/actions-yarn@master"
   args = "install"
 }
 
 action "Test" {
-  uses = "docker://culturehq/actions-yarn:latest"
+  uses = "nuxt/actions-yarn@master"
   needs = ["Install"]
   args = "test"
 }
