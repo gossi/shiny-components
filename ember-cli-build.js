@@ -26,10 +26,10 @@ module.exports = function(defaults) {
 
     prember: {
       urls: function () {
-        const routes = walkSync('src/ui/routes', { ignore: ['application', 'index'] });
+        const routes = walkSync('src/ui/routes', { ignore: ['application'] });
         const urls = ['/'];
         for (const file of routes) {
-          if (file.endsWith('/') && !file.includes('/-components')) {
+          if (file.endsWith('/') && !file.includes('/-components') && !file.endsWith('index/')) {
             urls.push('/' + file);
           }
         }
