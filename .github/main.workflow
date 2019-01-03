@@ -17,5 +17,5 @@ action "Master" {
 action "Deploy" {
   uses = "nuxt/actions-yarn@master"
   needs = ["Install"]
-  args = "run ember deploy production"
+  args = "run ember deploy production --verbose"
 }
