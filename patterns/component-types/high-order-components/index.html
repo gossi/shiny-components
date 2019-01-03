@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>shiny-components</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    
+<meta name="shiny-components/config/environment" content="%7B%22ember-resolver%22%3A%7B%22features%22%3A%7B%22EMBER_RESOLVER_MODULE_UNIFICATION%22%3Atrue%7D%7D%2C%22modulePrefix%22%3A%22shiny-components%22%2C%22environment%22%3A%22production%22%2C%22rootURL%22%3A%22%2Fshiny-components%2F%22%2C%22locationType%22%3A%22hash%22%2C%22EmberENV%22%3A%7B%22FEATURES%22%3A%7B%22ember-module-unification%22%3Atrue%7D%2C%22EXTEND_PROTOTYPES%22%3A%7B%22Date%22%3Afalse%7D%2C%22_APPLICATION_TEMPLATE_WRAPPER%22%3Afalse%2C%22_JQUERY_INTEGRATION%22%3Afalse%2C%22_TEMPLATE_ONLY_GLIMMER_COMPONENTS%22%3Atrue%7D%2C%22APP%22%3A%7B%22name%22%3A%22shiny-components%22%2C%22version%22%3A%220.0.0%2B33d6b0cb%22%7D%2C%22exportApplicationGlobal%22%3Afalse%7D" />
+<!-- EMBER_CLI_FASTBOOT_TITLE -->
+
+    <link rel="stylesheet" href="/shiny-components/assets/vendor-57af878e3fd9c27e41d03ea9a4d87ab4.css">
+    <link rel="stylesheet" href="/shiny-components/assets/shiny-components-2c94992325872e51c176bbdaabb566d0.css">
+
+    
+  </head>
+  <body>
+    <script type="x/boundary" id="fastboot-body-start"></script><header>
+  <h1>Shiny Components</h1>
+  <p>Design Patterns and Best Practices for Components in Ember</p>
+</header>
+
+<nav>
+  <ul>
+    <li class="section">Best Practices</li>
+    <li><a href="/shiny-components/best-practices/sparkles" id="ember161" class="ember-view">Sparkles</a></li>
+    <li><a href="/shiny-components/best-practices/singel" id="ember162" class="ember-view">Singel</a></li>
+    <li><a href="/shiny-components/best-practices/component-classification" id="ember163" class="ember-view">Component Classification</a></li>
+    <li><a href="/shiny-components/best-practices/naming-conventions" id="ember164" class="ember-view">Naming Conventions</a></li>
+
+    <li class="section">Patterns</li>
+    <li class="topic"><a href="/shiny-components/patterns/component-types" id="ember165" class="active ember-view">Component Types</a></li>
+    <li><a href="/shiny-components/patterns/component-types/presentational-components" id="ember166" class="ember-view">Presentational Components</a></li>
+    <li><a href="/shiny-components/patterns/component-types/contextual-components" id="ember167" class="ember-view">Contextual Components</a></li>
+    <li><a href="/shiny-components/patterns/component-types/container-components" id="ember168" class="ember-view">Container Components</a></li>
+    <li><a href="/shiny-components/patterns/component-types/high-order-components" id="ember169" class="active ember-view">High-Order-Components</a></li>
+    <li class="topic"><a href="/shiny-components/patterns" id="ember170" class="active ember-view">Composites</a></li>
+    <li><a href="/shiny-components/patterns/composites/inheritance" id="ember171" class="ember-view">Inheritance</a></li>
+    <li><a href="/shiny-components/patterns/composites/composition" id="ember172" class="ember-view">Composition</a></li>
+    <li class="topic"><a href="/shiny-components/patterns/dom-api" id="ember173" class="ember-view">DOM API</a></li>
+    <li>Loosly Coupled</li>
+    <li>Strongly Coupled</li>
+  </ul>
+</nav>
+
+<main>
+  <section>
+  <header>
+    <ol class="breadcrumbs">
+      <li>Patterns</li>
+      <li>High Order Components</li>
+    </ol>
+
+    <h2>High Order Components</h2>
+  </header>
+
+  <article>
+    <h3>Toggle Component</h3>
+
+    <pre id="ember174" class="ember-view">toggle/
+  label/
+    template.hbs
+  switch/
+    template.hbs
+  component.ts
+  template.hbs
+</pre>
+
+    <div>
+  <ul class="_tabbar_ssx6im">
+<!---->  </ul>
+
+  <div class="_tabcontainer_ssx6im">
+    
+      <div class="_shown_16d1j0">
+  
+        <pre id="ember175" class="htmlbars ember-view">{{#if (has-block-params)}}
+  {{yield (hash
+    label=(component this.labelComponent for=this.id invoke=(bind this.change))
+    switch=(component this.switchComponent id=this.id invoke=(bind this.change) checked=this.checked enabled=this.enabled)
+  )}}
+{{else if (has-block)}}
+  {{#if @offLabel}}
+    {{#component this.labelComponent value=false for=this.id invoke=(bind this.change)}}{{@offLabel}}{{/component}}
+  {{/if}}
+
+  {{component this.switchComponent checked=this.checked invoke=(bind this.change) enabled=this.enabled}}
+
+  {{#component this.labelComponent for=this.id invoke=(bind this.change)}}
+    {{yield}}
+  {{/component}}
+
+  {{#if @onLabel}}
+    {{#component this.labelComponent value=true for=this.id invoke=(bind this.change)}}{{@onLabel}}{{/component}}
+  {{/if}}
+{{else}}
+  {{#if @offLabel}}
+    {{#component this.labelComponent value=false for=this.id invoke=(bind this.change)}}{{@offLabel}}{{/component}}
+  {{/if}}
+
+  &lt;Switch id={{this.id}} @checked={{this.checked}} @invoke={{bind this.change}} @enabled={{this.enabled}}/&gt;
+
+  {{#if @label}}
+    {{#component this.labelComponent for=this.id invoke=(bind this.change)}}{{@label}}{{/component}}
+  {{/if}}
+
+  {{#if @onLabel}}
+    {{#component this.labelComponent value=true for=this.id invoke=(bind this.change)}}{{@onLabel}}{{/component}}
+  {{/if}}
+{{/if}}
+</pre>
+      
+</div>
+
+      <div class="_hidden_16d1j0">
+  
+        <pre id="ember176" class="typescript ember-view">import { guidFor } from '@ember/object/internals';
+import SparklesComponent from 'sparkles-component';
+import { arg } from 'sparkles-decorators';
+
+interface Args {
+  id?: string;
+  checked?: boolean;
+  label?: string;
+  onLabel?: string;
+  offLabel?: string;
+  enabled?: boolean;
+  changed?: (value: boolean) =&gt; void;
+
+  labelComponent?: string;
+  switchComponent?: string;
+}
+
+export default class ToggleComponent extends SparklesComponent&lt;Args&gt; {
+  @arg id: string = guidFor(this);
+  @arg enabled: boolean = true;
+  @arg checked: boolean = false;
+
+  @arg labelComponent: string = 'label';
+  @arg switchComponent: string = 'switch';
+
+  toggled: boolean = false;
+
+  change(checked?: boolean) {
+    if (checked === undefined) {
+      checked = !this.checked;
+    }
+
+    if (this.enabled &amp;&amp; this.checked !== checked) {
+      this.checked = checked;
+
+      if (this.args.changed) {
+        this.args.changed(this.checked);
+      }
+    }
+  }
+}
+</pre>
+      
+</div>
+
+      <div class="_hidden_16d1j0">
+  
+        <pre id="ember177" class="htmlbars ember-view">&lt;label for={{@for}} onclick={{action @invoke @value}} ...attributes&gt;{{yield}}&lt;/label&gt;
+</pre>
+      
+</div>
+
+      <div class="_hidden_16d1j0">
+  
+        <pre id="ember178" class="htmlbars ember-view">&lt;input type="checkbox" checked={{@checked}} disabled={{not @enabled}} onclick={{action @invoke undefined}}&gt;
+</pre>
+      
+</div>
+    
+  </div>
+</div>
+
+    <h3>Usage</h3>
+
+    <h4>Basic Usage</h4>
+
+    <div>
+  <ul class="_tabbar_ssx6im">
+<!---->  </ul>
+
+  <div class="_tabcontainer_ssx6im">
+    
+      <div class="_shown_16d1j0">
+  
+        <pre id="ember179" class="htmlbars ember-view">&lt;Toggle @label='Toggle' @onLabel='On' @offLabel='Off'/&gt;
+</pre>
+      
+</div>
+
+      <div class="_hidden_16d1j0">
+  
+            <label for="ember180">Off</label>
+
+  <input type="checkbox">
+
+    <label for="ember180">Toggle</label>
+
+    <label for="ember180">On</label>
+
+      
+</div>
+    
+  </div>
+</div>
+
+
+    <h4>Block Usage</h4>
+
+    <div>
+  <ul class="_tabbar_ssx6im">
+<!---->  </ul>
+
+  <div class="_tabcontainer_ssx6im">
+    
+      <div class="_shown_16d1j0">
+  
+        <pre id="ember181" class="htmlbars ember-view">&lt;Toggle @onLabel='On' @offLabel='Off'&gt;Toggle&lt;/Toggle&gt;
+</pre>
+      
+</div>
+
+      <div class="_hidden_16d1j0">
+  
+            <label for="ember182">Off</label>
+
+  <input type="checkbox">
+
+<label for="ember182">    Toggle
+</label>
+    <label for="ember182">On</label>
+
+      
+</div>
+    
+  </div>
+</div>
+
+
+    <h4>Block Params Usage</h4>
+
+    <div>
+  <ul class="_tabbar_ssx6im">
+<!---->  </ul>
+
+  <div class="_tabcontainer_ssx6im">
+    
+      <div class="_shown_16d1j0">
+  
+        <pre id="ember183" class="htmlbars ember-view">&lt;Toggle as |t|&gt;
+  &lt;t.label @value={{true}} local-class="on"&gt;On&lt;/t.label&gt;
+  &lt;t.switch/&gt;
+  &lt;t.label&gt;Toggle&lt;/t.label&gt;
+  &lt;t.label @value={{false}} local-class="off"&gt;Off&lt;/t.label&gt;
+&lt;/Toggle&gt;
+</pre>
+      
+</div>
+
+      <div class="_hidden_16d1j0">
+  
+          
+          <label for="ember184" class="_on_15q4kq">On</label>
+          <input type="checkbox">
+          <label for="ember184">Toggle</label>
+          <label for="ember184" class="_off_15q4kq">Off</label>
+        
+
+      
+</div>
+    
+  </div>
+</div>
+
+    <h4>Super-Duper-Extended Usage</h4>
+
+    <div>
+  <ul class="_tabbar_ssx6im">
+<!---->  </ul>
+
+  <div class="_tabcontainer_ssx6im">
+    
+      <div class="_shown_16d1j0">
+  
+        <pre id="ember185" class="htmlbars ember-view">&lt;Toggle @labelComponent={{component 'fancy-label'}} @onLabel='On' @offLabel='Off'&gt;Toggle&lt;/Toggle&gt;
+</pre>
+      
+</div>
+
+      <div class="_hidden_16d1j0">
+  
+            <label class="_fancy_1w5bnb" for="ember186">Off</label>
+
+  <input type="checkbox">
+
+<label class="_fancy_1w5bnb" for="ember186">    Toggle
+</label>
+    <label class="_fancy_1w5bnb" for="ember186">On</label>
+
+      
+</div>
+    
+  </div>
+</div>
+
+    <h3>References</h3>
+    <ul>
+      <li>Abramov, D. (2015). <i>Presentational and Container Components</i>. <a href="https://medium.com/@dan_abramov/smart-and-dumb-components-7ca2f9a7c7d0">https://medium.com/@dan_abramov/smart-and-dumb-components-7ca2f9a7c7d0</a></li>
+      <li>Camba, M. (2017). <i>EmberConf 2017: Higher Order Components by Miguel Camba</i>. <a href="https://www.youtube.com/watch?v=MpFudGJn2J0">https://www.youtube.com/watch?v=MpFudGJn2J0</a></li>
+    </ul>
+  </article>
+</section>
+</main><script type="x/boundary" id="fastboot-body-end"></script>
+
+    <script src="/shiny-components/assets/vendor-9b8c20201495acfa8887f43f32214cc2.js"></script>
+    <script src="/shiny-components/assets/shiny-components-06635d1be2239d64a7db9b7c4e35ceb6.js"></script>
+
+    
+  </body>
+</html>

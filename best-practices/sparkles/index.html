@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>shiny-components</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    
+<meta name="shiny-components/config/environment" content="%7B%22ember-resolver%22%3A%7B%22features%22%3A%7B%22EMBER_RESOLVER_MODULE_UNIFICATION%22%3Atrue%7D%7D%2C%22modulePrefix%22%3A%22shiny-components%22%2C%22environment%22%3A%22production%22%2C%22rootURL%22%3A%22%2Fshiny-components%2F%22%2C%22locationType%22%3A%22hash%22%2C%22EmberENV%22%3A%7B%22FEATURES%22%3A%7B%22ember-module-unification%22%3Atrue%7D%2C%22EXTEND_PROTOTYPES%22%3A%7B%22Date%22%3Afalse%7D%2C%22_APPLICATION_TEMPLATE_WRAPPER%22%3Afalse%2C%22_JQUERY_INTEGRATION%22%3Afalse%2C%22_TEMPLATE_ONLY_GLIMMER_COMPONENTS%22%3Atrue%7D%2C%22APP%22%3A%7B%22name%22%3A%22shiny-components%22%2C%22version%22%3A%220.0.0%2B33d6b0cb%22%7D%2C%22exportApplicationGlobal%22%3Afalse%7D" />
+<!-- EMBER_CLI_FASTBOOT_TITLE -->
+
+    <link rel="stylesheet" href="/shiny-components/assets/vendor-57af878e3fd9c27e41d03ea9a4d87ab4.css">
+    <link rel="stylesheet" href="/shiny-components/assets/shiny-components-2c94992325872e51c176bbdaabb566d0.css">
+
+    
+  </head>
+  <body>
+    <script type="x/boundary" id="fastboot-body-start"></script><header>
+  <h1>Shiny Components</h1>
+  <p>Design Patterns and Best Practices for Components in Ember</p>
+</header>
+
+<nav>
+  <ul>
+    <li class="section">Best Practices</li>
+    <li><a href="/shiny-components/best-practices/sparkles" id="ember78" class="active ember-view">Sparkles</a></li>
+    <li><a href="/shiny-components/best-practices/singel" id="ember79" class="ember-view">Singel</a></li>
+    <li><a href="/shiny-components/best-practices/component-classification" id="ember80" class="ember-view">Component Classification</a></li>
+    <li><a href="/shiny-components/best-practices/naming-conventions" id="ember81" class="ember-view">Naming Conventions</a></li>
+
+    <li class="section">Patterns</li>
+    <li class="topic"><a href="/shiny-components/patterns/component-types" id="ember82" class="ember-view">Component Types</a></li>
+    <li><a href="/shiny-components/patterns/component-types/presentational-components" id="ember83" class="ember-view">Presentational Components</a></li>
+    <li><a href="/shiny-components/patterns/component-types/contextual-components" id="ember84" class="ember-view">Contextual Components</a></li>
+    <li><a href="/shiny-components/patterns/component-types/container-components" id="ember85" class="ember-view">Container Components</a></li>
+    <li><a href="/shiny-components/patterns/component-types/high-order-components" id="ember86" class="ember-view">High-Order-Components</a></li>
+    <li class="topic"><a href="/shiny-components/patterns" id="ember87" class="ember-view">Composites</a></li>
+    <li><a href="/shiny-components/patterns/composites/inheritance" id="ember88" class="ember-view">Inheritance</a></li>
+    <li><a href="/shiny-components/patterns/composites/composition" id="ember89" class="ember-view">Composition</a></li>
+    <li class="topic"><a href="/shiny-components/patterns/dom-api" id="ember90" class="ember-view">DOM API</a></li>
+    <li>Loosly Coupled</li>
+    <li>Strongly Coupled</li>
+  </ul>
+</nav>
+
+<main>
+  <section>
+  <header>
+    <ol class="breadcrumbs">
+      <li>Best Practices</li>
+      <li>Sparkles</li>
+    </ol>
+
+    <h2>Sparkles</h2>
+  </header>
+
+  <article>
+    <h3>Argument Defaults</h3>
+
+    <h4>Problem</h4>
+
+    The glimmer VM doesn't provide <code>@argument</code> defaults - that is by design.
+
+    <h4>Solution</h4>
+    Use the <code>@arg</code> decorator from <a href="https://github.com/gossi/sparkles-decorators">sparkles-decorators</a>.
+
+    <h4>Example</h4>
+    See <a href="#element-reference">Element Reference</a> below.
+
+    <h3 id="element-reference">Element Reference</h3>
+
+    <h4>Problem</h4>
+    In glimmer, components can access <code>this.bounds</code> to access the first and last element from the component at root level (which can be the same one).
+    Sparkles as proof-of-concept implementation do not provide that access.
+
+    <h4>Solution</h4>
+    The official solution to this is being discussed in <a href="https://github.com/emberjs/rfcs/pull/415">RFC #415: Render Element Modifiers</a>.
+
+    <h4>Workaround</h4>
+    Until this is finalized and implemented, we need to rely on a workaround to access elements from the component.
+
+    <div>
+  <ul class="_tabbar_ssx6im">
+<!---->  </ul>
+
+  <div class="_tabcontainer_ssx6im">
+    
+      <div class="_shown_16d1j0">
+  
+        <pre id="ember91" class="typescript ember-view">import SparklesComponent from 'sparkles-component';
+import { guidFor } from '@ember/object/internals';
+import { arg } from 'sparkles-decorators';
+
+interface Args {
+  id?: string
+}
+
+export default class ElementReferenceComponent extends SparklesComponent&lt;Args&gt; {
+  @arg id: string = guidFor(this);
+
+  didInsertElement() {
+    document.getElementById(this.id);
+  }
+}
+</pre>
+      
+</div>
+
+      <div class="_hidden_16d1j0">
+  
+        <pre id="ember92" class="htmlbars ember-view">&lt;div id={{this.id}}&gt;
+  {{yield}}
+&lt;/div&gt;
+</pre>
+      
+</div>
+    
+  </div>
+</div>
+
+    <h4>Example</h4>
+
+    Taken the code from above.
+
+    <div>
+  <ul class="_tabbar_ssx6im">
+<!---->  </ul>
+
+  <div class="_tabcontainer_ssx6im">
+    
+      <div class="_shown_16d1j0">
+  
+        <pre id="ember93" class="htmlbars ember-view">&lt;ElementReference/&gt;
+&lt;ElementReference @id="my-id"/&gt;
+</pre>
+      
+</div>
+      <div class="_hidden_16d1j0">
+  
+        <pre id="ember94" class="ember-view">&lt;div id="ember1744"&gt;&lt;/div&gt;
+&lt;div id="my-id"&gt;&lt;/div&gt;
+</pre>
+      
+</div>
+    
+  </div>
+</div>
+
+    <h3>No attributes with <code>component</code> helper</h3>
+
+    <h4>Problem</h4>
+    With angle-brackets, there are now attributes and arguments that can be passed in to a component. The <code>component</code>
+    helper uses the attribute syntax for arguments and is itself incapable of providing support for this.
+
+    <h4>Solution</h4>
+    A solution is on the horizon that will pretty much look like the workaround we have to use for now.
+
+    <h4>Workaround</h4>
+    Use <a href="https://github.com/mmun/ember-component-attributes"><code>ember-component-attributes</code></a> addon. It will provide
+    a <code>html-attributes</code> helper for usage inside <code>component</code> helper.
+  </article>
+</section>
+
+</main><script type="x/boundary" id="fastboot-body-end"></script>
+
+    <script src="/shiny-components/assets/vendor-9b8c20201495acfa8887f43f32214cc2.js"></script>
+    <script src="/shiny-components/assets/shiny-components-06635d1be2239d64a7db9b7c4e35ceb6.js"></script>
+
+    
+  </body>
+</html>
