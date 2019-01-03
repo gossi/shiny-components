@@ -20,7 +20,7 @@ action "Master" {
 action "Deploy" {
   uses = "./actions/ember"
   needs = ["Install"]
-  args = "deploy production --verbose"
+  args = "deploy production"
   secrets = ["GITHUB_TOKEN"]
   env = {
     GIT_USER = "gossi",
