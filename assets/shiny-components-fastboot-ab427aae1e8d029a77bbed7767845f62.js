@@ -12,7 +12,9 @@ e.default=t}),define("shiny-components/src/ui/components/tabs/page/styles",["exp
 Object.defineProperty(e,"__esModule",{value:!0}),e.default=void 0
 e.default={shown:"_shown_16d1j0",hidden:"_hidden_16d1j0"}}),define("shiny-components/src/ui/components/tabs/styles",["exports"],function(e){"use strict"
 Object.defineProperty(e,"__esModule",{value:!0}),e.default=void 0
-e.default={tabbar:"_tabbar_ssx6im",active:"_active_ssx6im",tabcontainer:"_tabcontainer_ssx6im"}}),define("shiny-components/src/ui/routes/patterns/component-types/high-order-components/-components/fancy-label/styles",["exports"],function(e){"use strict"
+e.default={tabbar:"_tabbar_ssx6im",active:"_active_ssx6im",tabcontainer:"_tabcontainer_ssx6im"}}),define("shiny-components/src/ui/routes/application/styles",["exports"],function(e){"use strict"
+Object.defineProperty(e,"__esModule",{value:!0}),e.default=void 0
+e.default={github:"_github_nvb8xi"}}),define("shiny-components/src/ui/routes/patterns/component-types/high-order-components/-components/fancy-label/styles",["exports"],function(e){"use strict"
 Object.defineProperty(e,"__esModule",{value:!0}),e.default=void 0
 e.default={fancy:"_fancy_1w5bnb"}}),define("shiny-components/src/ui/routes/patterns/component-types/high-order-components/styles",["exports"],function(e){"use strict"
 Object.defineProperty(e,"__esModule",{value:!0}),e.default=void 0
@@ -20,4 +22,4 @@ e.default={on:"_on_15q4kq",off:"_off_15q4kq"}}),define("shiny-components/src/ui/
 Object.defineProperty(e,"__esModule",{value:!0}),e.default=void 0
 e.default={navWidth:"225px",asideWidth:"300px"}})
 
-//# sourceMappingURL=shiny-components-fastboot-53ef6ad97438e5103a4a75cb3597411d.map
+//# sourceMappingURL=shiny-components-fastboot-e534441b75de83ebab1f96ed14c76ab7.map
