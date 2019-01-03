@@ -1,6 +1,6 @@
 workflow "Main" {
   on = "push"
-  resolves = "Install"
+  resolves = ["Deploy"]
 }
 
 action "Install" {
@@ -12,4 +12,9 @@ action "Install" {
 action "Master" {
   uses = "actions/bin/filter@b2bea07"
   args = "branch master"
+}
+
+action "Deploy" {
+  uses = "nuxt/actions-yarn@master"
+  needs = ["Install"]
 }
