@@ -15,20 +15,20 @@ Router.map(function () {
   });
 
   this.route('patterns', function () {
-    this.route('component-types');
-    this.route('presentational-components');
-    this.route('contextual-components');
-    this.route('container-components');
-    this.route('high-order-components');
+    this.route('component-types', function () {
+      this.route('presentational-components');
+      this.route('contextual-components');
+      this.route('container-components');
+      this.route('high-order-components');
+    });
+
+    this.route('composites', function () {
+      this.route('inheritance');
+      this.route('composition');
+    });
 
     this.route('dom-api');
-
-    this.route('inheritance');
-    this.route('composition');
   });
-
-
-
 });
 
 export default Router;

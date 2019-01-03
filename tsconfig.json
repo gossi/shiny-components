@@ -27,6 +27,12 @@
       "shiny-components/src/*": [
         "src/*"
       ],
+      "sparkles-component": [
+        "node_modules/sparkles-component/addon"
+      ],
+      "sparkles-component/*": [
+        "node_modules/sparkles-component/addon/*"
+      ],
       "*": [
         "types/*"
       ]
@@ -35,6 +41,7 @@
   "include": [
     "src/**/*",
     "tests/**/*",
-    "types/**/*"
+    "types/**/*",
+    "node_modules/sparkles-component/addon/**/*"
   ]
 }

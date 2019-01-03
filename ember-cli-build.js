@@ -1,6 +1,7 @@
 'use strict';
 
 const EmberApp = require('ember-cli/lib/broccoli/ember-app');
+const walkSync = require('walk-sync');
 
 module.exports = function(defaults) {
   let app = new EmberApp(defaults, {
@@ -20,6 +21,20 @@ module.exports = function(defaults) {
         after: [
           require('autoprefixer')('last 2 versions')
         ]
+      }
+    },
+
+    prember: {
+      urls: function () {
+        const routes = walkSync('src/ui/routes', { ignore: ['application', 'index'] });
+        const urls = ['/'];
+        for (const file of routes) {
+          if (file.endsWith('/') && !file.includes('/-components')) {
+            urls.push('/' + file);
+          }
+        }
+
+        return urls;
       }
     }
     // Add options here

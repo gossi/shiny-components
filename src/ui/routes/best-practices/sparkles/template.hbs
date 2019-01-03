@@ -25,10 +25,13 @@
 
     <h4>Problem</h4>
     In glimmer, components can access <code>this.bounds</code> to access the first and last element from the component at root level (which can be the same one).
-    Sparkles as proof-of-concept implementation do not provide that access. The official solution to this is being discussed in <a href="https://github.com/emberjs/rfcs/pull/415">RFC #415: Render Element Modifiers</a>.
-    Until this is finalized and implemented, we need to rely on a workaround to access elements from the component.
+    Sparkles as proof-of-concept implementation do not provide that access.
+
+    <h4>Solution</h4>
+    The official solution to this is being discussed in <a href="https://github.com/emberjs/rfcs/pull/415">RFC #415: Render Element Modifiers</a>.
 
     <h4>Workaround</h4>
+    Until this is finalized and implemented, we need to rely on a workaround to access elements from the component.
 
     <Tabs as |tabs|>
       <tabs.page @title="component.ts">
@@ -52,5 +55,18 @@
         <CodeSnippet @name="sparkles/element-reference/output.html"/>
       </tabs.page>
     </Tabs>
+
+    <h3>No attributes with <code>component</code> helper</h3>
+
+    <h4>Problem</h4>
+    With angle-brackets, there are now attributes and arguments that can be passed in to a component. The <code>component</code>
+    helper uses the attribute syntax for arguments and is itself incapable of providing support for this.
+
+    <h4>Solution</h4>
+    A solution is on the horizon that will pretty much look like the workaround we have to use for now.
+
+    <h4>Workaround</h4>
+    Use <a href="https://github.com/mmun/ember-component-attributes"><code>ember-component-attributes</code></a> addon. It will provide
+    a <code>html-attributes</code> helper for usage inside <code>component</code> helper.
   </article>
 </section>

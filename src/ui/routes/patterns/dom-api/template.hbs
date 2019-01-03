@@ -1,27 +1,33 @@
-<ol class="breadcrumbs">
-  <li>Patterns</li>
-  <li>DOM API</li>
-</ol>
+<section>
+  <header>
+    <ol class="breadcrumbs">
+      <li>Patterns</li>
+      <li>DOM API</li>
+    </ol>
 
-<h2>DOM API</h2>
+    <h2>DOM API</h2>
+  </header>
 
-<h3>Challenge</h3>
+  <article>
+    <h3>Challenge</h3>
 
-<p>Given the following HTML snippet:</p>
+    <p>Given the following HTML snippet:</p>
 
-<CodeSnippet @name="dom-api/challenge.html"/>
+    <CodeSnippet @name="dom-api/challenge.html"/>
 
-We have two distinct elements we want to connect together. The idea is when we click the button, we want to call <code>video.play()</code> method. With pure HTML and DOM APIs this is pretty simple:
+    We have two distinct elements we want to connect together. The idea is when we click the button, we want to call <code>video.play()</code> method. With pure HTML and DOM APIs this is pretty simple:
 
-<ol>
-  <li>Put a click even listener on the button</li>
-  <li>When invoked, query the DOM for the video element</li>
-  <li>Invoke <code>video.play()</code></li>
-</ol>
+    <ol>
+      <li>Put a click even listener on the button</li>
+      <li>When invoked, query the DOM for the video element</li>
+      <li>Invoke <code>video.play()</code></li>
+    </ol>
 
-Ember follows the Data-Down Actions-Up (DDAU) pattern, which isn't designed for something similar to a public DOM API. Still there are two ways to accomplish this functionality in ember:
+    Ember follows the Data-Down Actions-Up (DDAU) pattern, which isn't designed for something similar to a public DOM API. Still there are two ways to accomplish this functionality in ember:
 
-<ol>
-  <li>Lossly Coupled - the HTML way</li>
-  <li>Strongly Coupled - the Ember way</li>
-</ol>
+    <ol>
+      <li>Lossly Coupled - the HTML way</li>
+      <li>Strongly Coupled - the Ember way</li>
+    </ol>
+  </article>
+</section>
