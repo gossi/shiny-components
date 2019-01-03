@@ -21,5 +21,9 @@ action "Deploy" {
   uses = "./actions/ember"
   needs = ["Install"]
   args = "deploy production --verbose"
-  secrets = ["GITHUB_TOKEN"]
+  # secrets = ["GITHUB_TOKEN"]
+  env = {
+    GIT_USER = "gossi",
+    GIT_EMAIL = "gossi@users.noreply.github.com"
+  }
 }

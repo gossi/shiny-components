@@ -21,7 +21,7 @@ module.exports = function(deployTarget) {
     ENV.build.environment = 'production';
     // configure other plugins for production deploy target here
     ENV.git = {
-      repo: 'https://$GITHUB_TOKEN@github.com/gossi/shiny-components.git',
+      // repo: 'https://$GITHUB_TOKEN@github.com/gossi/shiny-components.git',
       worktreePath: '/tmp/deploy-shiny-components'
     };
   }
