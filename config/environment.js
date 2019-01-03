@@ -51,7 +51,7 @@ module.exports = function(environment) {
 
   if (environment === 'production') {
     ENV.rootURL = '/shiny-components';
-    ENV.locationType = 'hash';
+    // ENV.locationType = 'hash';
   }
 
   return ENV;
