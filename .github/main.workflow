@@ -1,6 +1,9 @@
 workflow "Main" {
   on = "push"
-  resolves = ["Deploy"]
+  resolves = [
+    "Install",
+    "Deploy",
+  ]
 }
 
 action "Install" {
@@ -15,7 +18,8 @@ action "Master" {
 }
 
 action "Deploy" {
-  uses = "./actions/ember/"
+  uses = "./actions/ember"
   needs = ["Install"]
   args = "deploy production --verbose"
+  secrets = ["GITHUB_TOKEN"]
 }
