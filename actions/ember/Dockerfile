@@ -9,7 +9,7 @@ LABEL com.github.actions.icon="activity"
 LABEL com.github.actions.color="orange"
 # COPY LICENSE README.md THIRD_PARTY_NOTICE.md /
 
-RUN apt-get update && apt-get upgrade -y && apt-get install git
+RUN apt-get update && apt-get upgrade -y && apt-get install git -y
 
 COPY "entrypoint.sh" "/entrypoint.sh"
 ENTRYPOINT ["/entrypoint.sh"]
