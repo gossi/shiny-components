@@ -7,7 +7,6 @@ LABEL com.github.actions.name="GitHub Action for Ember"
 LABEL com.github.actions.description="Wraps the ember CLI to enable common ember commands."
 LABEL com.github.actions.icon="activity"
 LABEL com.github.actions.color="orange"
-# COPY LICENSE README.md THIRD_PARTY_NOTICE.md /
 
 RUN apt-get update && apt-get upgrade -y && apt-get install git -y
 
