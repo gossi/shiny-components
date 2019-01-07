@@ -16,16 +16,32 @@
       <li>Aren't responsible for data loading or mutating.</li>
       <li>Receive data and callbacks exclusively via arguments.</li>
       <li>Rarely have their own state - can only be UI state.</li>
-    </ul>
-
-    <h3>Rules</h3>
-    <ul>
       <li>Render as minimal elements as possible.</li>
-      <li></li>
     </ul>
 
     <h3>Avatar Component</h3>
 
+    <Tabs as |tabs|>
+      <tabs.page @title="template.hbs">
+        <CodeSnippet @name="ui/routes/patterns/component-types/presentational-components/-components/avatar/template.hbs"/>
+      </tabs.page>
+
+      <tabs.page @title="styles.css">
+        <CodeSnippet @name="ui/routes/patterns/component-types/presentational-components/-components/avatar/styles.css"/>
+      </tabs.page>
+    </Tabs>
+
+    <h3>Usage</h3>
+
+    <Tabs as |tabs|>
+      <tabs.page @title="Template">
+        <CodeSnippet @name="presentational/template.hbs"/>
+      </tabs.page>
+
+      <tabs.page @title="Result">
+        <Avatar @src="https://avatars2.githubusercontent.com/u/283700"/>
+      </tabs.page>
+    </Tabs>
 
     <h3>References</h3>
     <ul>
