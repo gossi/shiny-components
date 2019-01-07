@@ -1,5 +1,7 @@
-@value navWidth: 225px;
+@value navWidth: 245px;
 @value asideWidth: 300px;
+
+@import url('https://fonts.googleapis.com/css?family=Lora');
 
 html, body {
   width: 100vw;
@@ -14,9 +16,12 @@ body {
   height: calc(100vh - 20px);
   display: grid;
   grid-template:
-    "header header" 120px
+    "header header" 140px
     "nav main"
     / navWidth auto;
+
+  font-family: 'Lora', serif;
+  font-size: 18px;
 }
 
 :global {
@@ -137,5 +142,13 @@ body {
 
   pre {
     overflow-x: auto;
+  }
+
+  th {
+    text-align: left;
+  }
+
+  td, th {
+    padding-right: 10px;
   }
 }
