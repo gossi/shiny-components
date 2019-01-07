@@ -7,6 +7,7 @@ const Router = EmberRouter.extend({
 });
 
 Router.map(function () {
+  this.route('research');
   this.route('best-practices', function () {
     this.route('sparkles');
     this.route('singel');
