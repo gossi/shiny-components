@@ -9,6 +9,66 @@
   </header>
 
   <article>
+    <h3>Listeners</h3>
+
+    <dl>
+      <dt>Action-<b>Happened</b>-Listeners</dt>
+      <dd>Listeners that will be triggered once an action happened. E.g. after a value has changed.</dd>
+
+      <dt>Action-<b>Happening</b>-Listeners</dt>
+      <dd>Listeners that will be triggered while the action is happening. E.g. a value is changing in timeline, while the timebar is moved around (triggered by a mouse move event).</dd>
+    </dl>
+
+    <h4>Naming Schemes</h4>
+
+    <p>There are two naming schemes:</p>
+
+    <dl>
+      <dt>Prefixed Gerund</dt>
+      <dd>Idea bought by HTML listeners, that are prefixed with <code>on</code> and take the event name after. Examples would be: <code>onChange</code> or <code>onChanging</code>.</dd>
+
+      <dt>Active/Passive</dt>
+      <dd>Use active or passive verbs as listener names. Examples would be: <code>changed</code> or <code>change</code>.</dd>
+    </dl>
+
+    <h4>Optional Object Bounding</h4>
+
+    <p>
+      Imagine, these listeners are bound to a component. In case the component is changing one object, the naming would be just the verb - easy. In case the component can change two different objects, those would be prefixing the verb.
+      Examples would be <code>valueChanged</code> or <code>onValueChange</code>.
+    </p>
+
+    <tabel>
+      <thead>
+        <tr>
+          <th>Naming Scheme</th>
+          <th>Active/Passive</th>
+          <th>Prefixed Gerund</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Action-Happened-Listener</td>
+          <td><code>changed</code></td>
+          <td><code>onChange</code></td>
+        </tr>
+        <tr>
+          <td>Action-Happening-Listener</td>
+          <td><code>change</code></td>
+          <td><code>onChanging</code></td>
+        </tr>
+        <tr>
+          <td>Action-Happened-Listener w/ Object</td>
+          <td><code>valueChanged</code></td>
+          <td><code>onValueChange</code></td>
+        </tr>
+        <tr>
+          <td>Action-Happening-Listener w Object/</td>
+          <td><code>valueChange</code></td>
+          <td><code>onValueChanging</code></td>
+        </tr>
+      </tbody>
+    </tabel>
 
     <h3>References</h3>
     <ul>
