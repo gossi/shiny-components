@@ -18,8 +18,10 @@ e.default={github:"_github_nvb8xi"}}),define("shiny-components/src/ui/routes/pat
 Object.defineProperty(e,"__esModule",{value:!0}),e.default=void 0
 e.default={fancy:"_fancy_1w5bnb"}}),define("shiny-components/src/ui/routes/patterns/component-types/high-order-components/styles",["exports"],function(e){"use strict"
 Object.defineProperty(e,"__esModule",{value:!0}),e.default=void 0
-e.default={on:"_on_15q4kq",off:"_off_15q4kq"}}),define("shiny-components/src/ui/styles/app",["exports"],function(e){"use strict"
+e.default={on:"_on_15q4kq",off:"_off_15q4kq"}}),define("shiny-components/src/ui/routes/patterns/component-types/presentational-components/-components/avatar/styles",["exports"],function(e){"use strict"
 Object.defineProperty(e,"__esModule",{value:!0}),e.default=void 0
-e.default={navWidth:"225px",asideWidth:"300px"}})
+e.default={avatar:"_avatar_1x38o8"}}),define("shiny-components/src/ui/styles/app",["exports"],function(e){"use strict"
+Object.defineProperty(e,"__esModule",{value:!0}),e.default=void 0
+e.default={navWidth:"245px",asideWidth:"300px"}})
 
-//# sourceMappingURL=shiny-components-fastboot-e534441b75de83ebab1f96ed14c76ab7.map
+//# sourceMappingURL=shiny-components-fastboot-3db385c8c3c9b97868c9e0521301e493.map

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>shiny-components</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    
+<meta name="shiny-components/config/environment" content="%7B%22ember-resolver%22%3A%7B%22features%22%3A%7B%22EMBER_RESOLVER_MODULE_UNIFICATION%22%3Atrue%7D%7D%2C%22modulePrefix%22%3A%22shiny-components%22%2C%22environment%22%3A%22production%22%2C%22rootURL%22%3A%22%2Fshiny-components%2F%22%2C%22locationType%22%3A%22auto%22%2C%22EmberENV%22%3A%7B%22FEATURES%22%3A%7B%22ember-module-unification%22%3Atrue%7D%2C%22EXTEND_PROTOTYPES%22%3A%7B%22Date%22%3Afalse%7D%2C%22_APPLICATION_TEMPLATE_WRAPPER%22%3Afalse%2C%22_JQUERY_INTEGRATION%22%3Afalse%2C%22_TEMPLATE_ONLY_GLIMMER_COMPONENTS%22%3Atrue%7D%2C%22APP%22%3A%7B%22name%22%3A%22shiny-components%22%2C%22version%22%3A%220.0.0%2B34d332e8%22%7D%2C%22exportApplicationGlobal%22%3Afalse%7D" />
+<!-- EMBER_CLI_FASTBOOT_TITLE -->
+
+    <link rel="stylesheet" href="/shiny-components/assets/vendor-57af878e3fd9c27e41d03ea9a4d87ab4.css">
+    <link rel="stylesheet" href="/shiny-components/assets/shiny-components-624c0ef762728319c1c7ae212bcd57ae.css">
+
+    
+  </head>
+  <body>
+    <script type="x/boundary" id="fastboot-body-start"></script><header>
+  <h1>
+    <a href="/shiny-components/" id="ember295" class="ember-view">Shiny Components</a>
+    <a class="_github_nvb8xi" href="https://github.com/gossi/shiny-components" target="_blank"><img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png"></a>
+  </h1>
+  <p>
+    Design Patterns and Best Practices for Components in Ember<br>
+    <small>by <a href="https://gos.si" target="_blank">Thomas Gossmann</a></small>
+  </p>
+
+</header>
+
+<nav>
+  <ul>
+    <li><a href="/shiny-components/research" id="ember296" class="active ember-view">Research</a></li>
+    <li class="section">Best Practices</li>
+    <li><a href="/shiny-components/best-practices/sparkles" id="ember297" class="ember-view">Sparkles</a></li>
+    <li><a href="/shiny-components/best-practices/singel" id="ember298" class="ember-view">Singel</a></li>
+    <li><a href="/shiny-components/best-practices/component-classification" id="ember299" class="ember-view">Component Classification</a></li>
+    <li><a href="/shiny-components/best-practices/naming-conventions" id="ember300" class="ember-view">Naming Conventions</a></li>
+
+    <li class="section">Patterns</li>
+    <li class="topic"><a href="/shiny-components/patterns/component-types" id="ember301" class="ember-view">Component Types</a></li>
+    <li><a href="/shiny-components/patterns/component-types/presentational-components" id="ember302" class="ember-view">Presentational Components</a></li>
+    <li><a href="/shiny-components/patterns/component-types/contextual-components" id="ember303" class="ember-view">Contextual Components</a></li>
+    <li><a href="/shiny-components/patterns/component-types/container-components" id="ember304" class="ember-view">Container Components</a></li>
+    <li><a href="/shiny-components/patterns/component-types/high-order-components" id="ember305" class="ember-view">High-Order-Components</a></li>
+    <li class="topic"><a href="/shiny-components/patterns" id="ember306" class="ember-view">Composites</a></li>
+    <li><a href="/shiny-components/patterns/composites/inheritance" id="ember307" class="ember-view">Inheritance</a></li>
+    <li><a href="/shiny-components/patterns/composites/composition" id="ember308" class="ember-view">Composition</a></li>
+    <li class="topic"><a href="/shiny-components/patterns/dom-api" id="ember309" class="ember-view">DOM API</a></li>
+    <li>Loosly Coupled</li>
+    <li>Strongly Coupled</li>
+  </ul>
+</nav>
+
+<main>
+  <section>
+  <header>
+    <ol class="breadcrumbs">
+      <li>Research</li>
+    </ol>
+
+    <h2>Research</h2>
+  </header>
+
+  <article>
+    <h3>Study</h3>
+
+    <p>
+      This is to get experience on how to use sparkles (as a PoC implementation for glimmer components) today in classic ember apps and how this will work in the future MU layout apps (and how they will be structured).
+      The idea is to retrieve best practices that you can apply today and will continue to work with MU layout. Three different use-cases with various variations have been tested
+    </p>
+
+    <ul>
+      <li>Invocation</li>
+      <li>Template only Glimmer Components</li>
+      <li><code>{{action}}</code> helper and the scope of this</li>
+    </ul>
+
+    <p>These tests are run against a classic ember app and an ember MU app.</p>
+
+    <h3>Results Overview</h3>
+
+    <p>
+      Some of these "tests" are red and are expected to be red. Some tests are red and were probably run with wrong expectations. The question is whether these tests are bugs or whether the expectations are wrong.
+    </p>
+
+    <img src="https://github.com/gossi/sparkles-test/raw/master/results.png">
+
+    <p>A note on reading this:</p>
+
+    <ul>
+      <li>For Invocation and Template only Glimmer Components the results show the found template, not found - but expected - template</li>
+      <li>For <code>this</code> the sheet shows the value of what <code>this</code> is. It is expected to always be the given context (e.g. <code>ApplicationController</code> see below)</li>
+    </ul>
+
+    <h3>Discussion</h3>
+
+    <h4>Invocation</h4>
+
+    <p>Invocation was probably the most easiest one to test. Some things that confuse me:</p>
+
+    <ul>
+      <li>Invocation of (folder-)curly-brace components throwed an error in MU</li>
+      <li>Angle bracket component couldn't be resolved by its name that resides in a sub folder (= <code>&lt;Wurst /&gt;</code>)</li>
+    </ul>
+
+    <h4>Template Only Glimmer Components</h4>
+
+    <p>Everything went well so far. Keep in mind, for classic apps there is a priority order in which template only components - if they happen to exist in two locations - are resolved.</p>
+
+    <h4>Scope of <code>this</code> when using <code>{{action}}</code> helper</h4>
+
+    <p>Glimmer stops making use of embers <code>@action</code> hash. Actions aren't referenced by their name anymore, instead the method is passed down directly. Important part is, that they are run under the scope they
+    are defined. That is being tested with this <code>ApplicationController</code> class:</p>
+
+    <pre id="ember310" class="javascript ember-view">import Controller from '@ember/controller';
+
+export default class ApplicationController extends Controller {
+
+  whoAmI() {
+    console.log('whoami', this);
+  }
+}
+</pre>
+
+    <p>
+      This "action" is passed down as <code>{{action this.whoAmI}}</code> to all variations it is tested in. My expectation is that <code>this</code> should always be related to the given context
+      (e.g. <code>ApplicationController</code>). In the past, I realised this wasn't always the case so I constructed plenty use-case variations to see which violate my expectations. The idea is from an application
+      route/controller I can only pass my action method and whatever happens afterwards is out-of-control in the scope of the application route/controller. Whenever my action method is invoked from inside the
+      components it is passed to, I want to rely on <code>this</code> being my <code>ApplicationController</code> anyway some weird/bad things happen on the way forth and back and whatever I put in is not
+      what's returned (PS: There is a computer science term describing this immutability and reliability - but I'm just a sport scientist ¯\(ツ)/¯).
+    </p>
+
+    <p>
+      According to <a href="https://github.com/rwjblue" target="_blank">@rwjblue</a> the <code>{{action}}</code> helper is probably not the way to go when running into a glimmer components world. The best option
+      is the <code>{{bind}}</code> helper from <a href="https://github.com/Serabe/ember-bind-helper" target="_blank">ember-bind-helper</a>. Tests include the use of bind helper in contrast to the action helper.
+    </p>
+
+    <h3>References</h3>
+    <ul>
+      <li>Gossmann, T. (2018). <i>Sparkles Test</i>. <a href="https://github.com/gossi/sparkles-test">https://github.com/gossi/sparkles-test</a></li>
+    </ul>
+  </article>
+</section>
+</main><script type="x/boundary" id="fastboot-body-end"></script>
+
+    <script src="/shiny-components/assets/vendor-9b8c20201495acfa8887f43f32214cc2.js"></script>
+    <script src="/shiny-components/assets/shiny-components-ebe0a74c57f826d80b58b3e60c21edda.js"></script>
+
+    
+  </body>
+</html>
