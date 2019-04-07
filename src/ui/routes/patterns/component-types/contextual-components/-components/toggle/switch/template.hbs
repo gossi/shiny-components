@@ -2,5 +2,5 @@
   type="checkbox"
   checked={{@checked}}
   disabled={{not @enabled}}
-  {{on "click" (bind @invoke undefined)}}
+  {{on "click" @invoke}}
 >

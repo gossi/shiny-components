@@ -1,10 +1,10 @@
-<div id="{{this.id}}">
-  Modal opened: {{this.opened}}
+<div ...attributes>
+  Modal opened: {{@open}}
 
   {{#if (has-block-params)}}
     {{yield (hash
-      header=(component 'header' modal=this)
-      body=(component 'body' modal=this)
+      Header=(component 'header' modal=this)
+      Body=(component 'body' modal=this)
     )}}
   {{else if (has-block)}}
     <Body>{{yield}}</Body>

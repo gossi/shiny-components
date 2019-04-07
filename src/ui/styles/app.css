@@ -106,26 +106,63 @@ body {
       max-width: calc(100vw - asideWidth - navhWidth);
       /* grid-column: 1; */
     }
+
+    aside {
+      h3 {
+        margin-bottom: 10px;
+      }
+
+      ul {
+        margin: 0;
+        padding-left: 20px;
+      }
+    }
+  }
+
+  .hint {
+    h3 {
+      &::before {
+        content: '👆 ';
+      }
+    }
+  }
+
+  .see {
+    h3 {
+      &::before {
+        content: '👉 ';
+      }
+    }
+  }
+
+  .summary {
+    h3 {
+      color: #008;
+
+      &::before {
+        content: 'ℹ ';
+      }
+    }
   }
 
   .good {
+    h3 {
+      color: #080;
 
+      &::before {
+        content: '✅ ';
+      }
+    }
   }
 
-  .good h3 {
-    color: #080;
-  }
+  .bad {
+    h3 {
+      color: #800;
 
-  .good h3::before {
-    content: '✅ '
-  }
-
-  .bad h3 {
-    color: #800;
-  }
-
-  .bad h3::before {
-    content: '❌ '
+      &::before {
+        content: '❌ ';
+      }
+    }
   }
 
   .breadcrumbs {
@@ -150,5 +187,17 @@ body {
 
   td, th {
     padding-right: 10px;
+  }
+
+  .wip {
+    background-color: orange;
+    color: white;
+    border-radius: 5px;
+    padding: 5px;
+    font-size: 80%;
+
+    &::before {
+      content: 'WIP';
+    }
   }
 }

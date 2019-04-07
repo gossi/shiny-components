@@ -1,6 +1,8 @@
+import { action } from '@ember/object';
 import { guidFor } from '@ember/object/internals';
 import Component from '@glimmer/component';
 import { Owner } from '@glimmer/di';
+import { tracked } from '@glimmer/tracking';
 
 interface ToggleArgs {
   id?: string;
@@ -18,7 +20,7 @@ interface ToggleArgs {
 export default class ToggleComponent extends Component<ToggleArgs> {
   id: string;
 
-  checked: boolean;
+  @tracked checked: boolean;
   enabled: boolean;
 
   labelComponent: string;
@@ -36,6 +38,7 @@ export default class ToggleComponent extends Component<ToggleArgs> {
     this.switchComponent = args.switchComponent || 'switch';
   }
 
+  @action
   change(checked?: boolean) {
     if (checked === undefined) {
       checked = !this.checked;

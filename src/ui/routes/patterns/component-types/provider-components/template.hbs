@@ -1,0 +1,73 @@
+<section>
+  <header>
+    <ol class="breadcrumbs">
+      <li>Patterns</li>
+      <li>Component Types</li>
+      <li>Provider Components</li>
+    </ol>
+
+    <h2>Provider Components</h2>
+  </header>
+
+  <aside>
+    <div class="hint">
+      <h3>Also known as</h3>
+      <ul>
+        <li>Container Components</li>
+      </ul>
+    </div>
+  </aside>
+
+  <article>
+    <h3>Principles</h3>
+    <ul>
+      <li><b>Only</b> concerned with <i>how things work</i>.</li>
+      <li>Contains logic.</li>
+      <li>Renderless.</li>
+      <li>Yields data and functions for further interaction.</li>
+    </ul>
+
+    <h3>DataManager Component</h3>
+    <Tabs as |tabs|>
+      <tabs.Page @title="template.hbs">
+        <CodeSnippet @name="ui/routes/patterns/component-types/provider-components/-components/data-manager/template.hbs"/>
+      </tabs.Page>
+
+      <tabs.Page @title="component.ts">
+        <CodeSnippet @name="ui/routes/patterns/component-types/provider-components/-components/data-manager/component.ts"/>
+      </tabs.Page>
+    </Tabs>
+
+    <h3>Usage</h3>
+
+    <Tabs as |tabs|>
+      <tabs.Page @title="Template">
+        <CodeSnippet @name="provider/fruits.hbs"/>
+      </tabs.Page>
+
+      <tabs.Page @title="Result">
+        <DataManager @items={{array 'banana' 'apple' 'ananas'}} as |data|>
+          <ul>
+            {{#each data.sortedItems as |item|}}
+            <li>{{item}}</li>
+            {{/each}}
+          </ul>
+        </DataManager>
+      </tabs.Page>
+    </Tabs>
+
+    <h3>References</h3>
+    <ul>
+      <li>
+        Chan, M. (2015).
+        <i>Container Components</i>.
+        <a href="https://medium.com/@learnreact/container-components-c0e67432e005">https://medium.com/@learnreact/container-components-c0e67432e005</a>.
+      </li>
+      <li>
+        Eramo, D. (2019).
+        <i>Building Better Components</i>. In EmberConf 2019.
+        <a href="https://www.youtube.com/watch?v=Kyd2mQpR_9c">https://www.youtube.com/watch?v=Kyd2mQpR_9c</a>.
+      </li>
+    </ul>
+  </article>
+</section>

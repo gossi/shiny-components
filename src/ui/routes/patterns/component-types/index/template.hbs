@@ -14,28 +14,28 @@
         <tr>
           <th>Name</th>
           <th>Smart or Dumb?</th>
+          <th>Renders ?</th>
           <th>Yields ?</th>
         </tr>
       </thead>
       <tbody>
         <tr>
-          <td>{{#link-to 'patterns.component-types.presentational-components'}}Presentational Component{{/link-to}}</td>
+          <td><LinkTo @route='patterns.component-types.presentational-components'>Presentational Component</LinkTo></td>
           <td>dumb</td>
+          <td>Yes</td>
           <td>no</td>
         </tr>
         <tr>
-          <td>{{#link-to 'patterns.component-types.contextual-components'}}Contextual Components{{/link-to}}</td>
-          <td>depends</td>
+          <td><LinkTo @route='patterns.component-types.provider-components'>Provider Components</LinkTo></td>
+          <td>smart</td>
+          <td>no</td>
           <td>yes</td>
         </tr>
         <tr>
-          <td>{{#link-to 'patterns.component-types.container-components'}}Container Components{{/link-to}}</td>
+          <td><LinkTo @route='patterns.component-types.contextual-components'>Contextual Components /
+          High-Order-Components</LinkTo></td>
           <td>smart</td>
-          <td>no</td>
-        </tr>
-        <tr>
-          <td>{{#link-to 'patterns.component-types.high-order-components'}}Composable Components / High-Order-Components{{/link-to}}</td>
-          <td>smart</td>
+          <td>yes and no</td>
           <td>yes</td>
         </tr>
       </tbody>
@@ -44,7 +44,17 @@
     <h3>References</h3>
 
     <ul>
-      <li>Kwaśniak, M. (2018). <i>Components patterns in Ember.js</i>. <a href="https://medium.com/macsour/components-patterns-in-ember-js-5e6fc6eea28f">https://medium.com/macsour/components-patterns-in-ember-js-5e6fc6eea28f</a>.</li>
+      <li>
+        Eramo, D. (2019).
+        <i>Building Better Components</i>. In EmberConf 2019.
+        <a href="https://www.youtube.com/watch?v=Kyd2mQpR_9c">https://www.youtube.com/watch?v=Kyd2mQpR_9c</a>.
+      </li>
+      <li>
+        Kwaśniak, M. (2018).
+        <i>Components patterns in Ember.js</i>.
+        <a
+        href="https://medium.com/macsour/components-patterns-in-ember-js-5e6fc6eea28f">https://medium.com/macsour/components-patterns-in-ember-js-5e6fc6eea28f</a>.
+      </li>
     </ul>
   </article>
 </section>

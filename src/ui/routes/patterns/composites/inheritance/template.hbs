@@ -10,12 +10,31 @@
   </header>
 
   <aside>
+    <div class="summary">
+      <h3>Summary</h3>
+
+      <p>
+        Use <LinkTo
+        @route="patterns.composites.composition">composition</LinkTo> over
+        inheritance.
+      </p>
+    </div>
+
     <div class="good">
-      <h3>Do</h3>
+      <h3>Pro</h3>
+
+      <ul>
+        <li>Works with ember components.</li>
+        <li>Works with classic and pods layout.</li>
+      </ul>
     </div>
 
     <div class="bad">
-      <h3>Don't</h3>
+      <h3>Contra</h3>
+
+      <ul>
+        <li>Stops working with MU layout.</li>
+      </ul>
     </div>
   </aside>
 
@@ -37,34 +56,34 @@
     <h4>Modal Component</h4>
     <Tabs as |tabs|>
       <tabs.Page @title="template.hbs">
-        <CodeSnippet @name="ui/routes/patterns/inheritance/-components/modal/template.hbs"/>
+        <CodeSnippet @name="ui/routes/patterns/composites/inheritance/-components/modal/template.hbs"/>
       </tabs.Page>
 
       <tabs.Page @title="component.ts">
-        <CodeSnippet @name="ui/routes/patterns/inheritance/-components/modal/component.ts"/>
+        <CodeSnippet @name="ui/routes/patterns/composites/inheritance/-components/modal/component.ts"/>
       </tabs.Page>
 
       <tabs.Page @title="header.hbs">
-        <CodeSnippet @name="ui/routes/patterns/inheritance/-components/modal/header/template.hbs"/>
+        <CodeSnippet @name="ui/routes/patterns/composites/inheritance/-components/modal/header/template.hbs"/>
       </tabs.Page>
 
       <tabs.Page @title="body.hbs">
-        <CodeSnippet @name="ui/routes/patterns/inheritance/-components/modal/body/template.hbs"/>
+        <CodeSnippet @name="ui/routes/patterns/composites/inheritance/-components/modal/body/template.hbs"/>
       </tabs.Page>
     </Tabs>
 
     <h4>Modal Dialog Component</h4>
     <Tabs as |tabs|>
       <tabs.Page @title="template.ts">
-        <CodeSnippet @name="ui/routes/patterns/inheritance/-components/modal-dialog/template.ts"/>
+        <CodeSnippet @name="ui/routes/patterns/composites/inheritance/-components/modal-dialog/template.ts"/>
       </tabs.Page>
 
       <tabs.Page @title="component.ts">
-        <CodeSnippet @name="ui/routes/patterns/inheritance/-components/modal-dialog/component.ts"/>
+        <CodeSnippet @name="ui/routes/patterns/composites/inheritance/-components/modal-dialog/component.ts"/>
       </tabs.Page>
 
       <tabs.Page @title="header.hbs">
-        <CodeSnippet @name="ui/routes/patterns/inheritance/-components/modal-dialog/header/template.hbs"/>
+        <CodeSnippet @name="ui/routes/patterns/composites/inheritance/-components/modal-dialog/header/template.hbs"/>
       </tabs.Page>
     </Tabs>
 
@@ -93,13 +112,13 @@
 
       <tabs.Page @title="Result">
         <Modal as |modal|>
-          <modal.header>
+          <modal.Header>
             header
-          </modal.header>
+          </modal.Header>
 
-          <modal.body>
+          <modal.Body>
             body
-          </modal.body>
+          </modal.Body>
         </Modal>
       </tabs.Page>
     </Tabs>
@@ -125,13 +144,13 @@
 
       <tabs.Page @title="Result">
         <ModalDialog as |modal|>
-          <modal.header>
+          <modal.Header>
             header
-          </modal.header>
+          </modal.Header>
 
-          <modal.body>
+          <modal.Body>
             body
-          </modal.body>
+          </modal.Body>
         </ModalDialog>
       </tabs.Page>
     </Tabs>

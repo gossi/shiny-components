@@ -1,0 +1,7 @@
+<DataManager @items={{array 'banana' 'apple' 'ananas'}} as |data|>
+  <ul>
+    {{#each data.sortedItems as |item|}}
+    <li>{{item}}</li>
+    {{/each}}
+  </ul>
+</DataManager>

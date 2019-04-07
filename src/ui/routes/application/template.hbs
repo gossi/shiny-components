@@ -1,35 +1,34 @@
 <header>
   <h1>
-    {{#link-to 'index'}}Shiny Components{{/link-to}}
+    <LinkTo @route="index">Shiny Components</LinkTo>
     <a href="https://github.com/gossi/shiny-components" target="_blank" local-class="github"><img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png"></a>
   </h1>
   <p>
     Design Patterns and Best Practices for Components in Ember<br>
     <small>by <a href="https://gos.si" target="_blank">Thomas Gossmann</a></small>
   </p>
-
 </header>
 
 <nav>
   <ul>
-    <li>{{#link-to 'research'}}Research{{/link-to}}</li>
-    <li class="section">Best Practices</li>
-    <li><LinkTo @route="best-practices.singel">Singel</LinkTo></li>
-    <li><LinkTo @route="best-practices.component-classification">Component Classification</LinkTo></li>
-    <li><LinkTo @route="best-practices.naming-conventions">Naming Conventions</LinkTo></li>
+    <li><LinkTo @route="introduction">Introduction</LinkTo></li>
 
     <li class="section">Patterns</li>
     <li class="topic"><LinkTo @route="patterns.component-types">Component Types</LinkTo></li>
-    <li><LinkTo @route="patterns.presentational-components">Presentational Components</LinkTo></li>
-    <li><LinkTo @route="patterns.contextual-components">Contextual Components</LinkTo></li>
-    <li><LinkTo @route="patterns.container-components">Container Components</LinkTo></li>
-    <li><LinkTo @route="patterns.high-order-components">High-Order-Components</LinkTo></li>
-    <li class="topic"><LinkTo @route="patterns">Composite</LinkTo></li>
-    <li><LinkTo @route="patterns.inheritance">Inheritance</LinkTo></li>
-    <li><LinkTo @route="patterns.composition">Composition</LinkTo></li>
+    <li><LinkTo @route="patterns.component-types.presentational-components">Presentational Components</LinkTo></li>
+    <li><LinkTo @route="patterns.component-types.provider-components">Provider Components</LinkTo></li>
+    <li><LinkTo @route="patterns.component-types.contextual-components">Contextual Components</LinkTo></li>
+    <li class="topic"><LinkTo @route="patterns.component-classification">Component Classification</LinkTo></li>
+    <li class="topic"><LinkTo @route="patterns">Composites</LinkTo></li>
+    <li><LinkTo @route="patterns.composites.inheritance">Inheritance</LinkTo></li>
+    <li><LinkTo @route="patterns.composites.composition">Composition</LinkTo></li>
     <li class="topic"><LinkTo @route="patterns.dom-api">DOM API</LinkTo></li>
     <li>Loosly Coupled</li>
     <li>Strongly Coupled</li>
+
+    <li class="section">Best Practices</li>
+    <li><LinkTo @route="best-practices.singel">Singel</LinkTo></li>
+    {{!-- <li><LinkTo @route="best-practices.naming-conventions">Naming Conventions</LinkTo></li> --}}
   </ul>
 </nav>
 
