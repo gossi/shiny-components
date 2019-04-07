@@ -1,20 +1,19 @@
-import SparklesComponent from 'sparkles-component';
+import Component from '@glimmer/component'
 import TabsComponent from 'shiny-components/src/ui/components/tabs/component';
-import { arg } from 'sparkles-decorators';
-// import { computed } from '@ember-decorators/object';
+import { Owner } from '@glimmer/di';
 
-interface Args {
+interface TabPageArgs {
   parent: TabsComponent;
   title: string;
 }
 
-export default class TabPageComponent extends SparklesComponent<Args> {
+export default class TabPageComponent extends Component<TabPageArgs> {
+  title: string;
 
-  @arg title!: string;
-
-  constructor(args: Args) {
-    super(args);
+  constructor(owner: Owner, args: TabPageArgs) {
+    super(owner, args);
 
     this.args.parent.registerPage(this);
+    this.title = args.title;
   }
 }

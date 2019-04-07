@@ -1,1 +1,6 @@
-<input type="checkbox" checked={{@checked}} disabled={{not @enabled}} onclick={{action @invoke undefined}}>
+<input
+  type="checkbox"
+  checked={{@checked}}
+  disabled={{not @enabled}}
+  {{on "click" (bind @invoke undefined)}}
+>

@@ -1,29 +1,40 @@
 import { guidFor } from '@ember/object/internals';
-import SparklesComponent from 'sparkles-component';
-import { arg } from 'sparkles-decorators';
+import Component from '@glimmer/component';
+import { Owner } from '@glimmer/di';
 
-interface Args {
+interface ToggleArgs {
   id?: string;
   checked?: boolean;
   label?: string;
   onLabel?: string;
   offLabel?: string;
   enabled?: boolean;
-  changed?: (value: boolean) => void;
+  change?: (value: boolean) => void;
 
   labelComponent?: string;
   switchComponent?: string;
 }
 
-export default class ToggleComponent extends SparklesComponent<Args> {
-  @arg id: string = guidFor(this);
-  @arg enabled: boolean = true;
-  @arg checked: boolean = false;
+export default class ToggleComponent extends Component<ToggleArgs> {
+  id: string;
 
-  @arg labelComponent: string = 'label';
-  @arg switchComponent: string = 'switch';
+  checked: boolean;
+  enabled: boolean;
 
-  toggled: boolean = false;
+  labelComponent: string;
+  switchComponent: string;
+
+  constructor(owner: Owner, args: ToggleArgs) {
+    super(owner, args);
+
+    // set initial state
+    this.id = args.id || guidFor(this);
+    this.enabled = args.enabled || true;
+    this.checked = args.checked || false;
+
+    this.labelComponent = args.labelComponent || 'label';
+    this.switchComponent = args.switchComponent || 'switch';
+  }
 
   change(checked?: boolean) {
     if (checked === undefined) {
@@ -34,7 +45,7 @@ export default class ToggleComponent extends SparklesComponent<Args> {
       this.checked = checked;
 
       if (this.args.changed) {
-        this.args.changed(this.checked);
+        this.args.change(this.checked);
       }
     }
   }

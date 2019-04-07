@@ -1,1 +1,7 @@
-<label local-class="fancy" for={{@for}} onclick={{action @invoke @value}}>{{yield}}</label>
+<label
+  local-class="fancy"
+  for={{@for}}
+  {{on "click" (bind @invoke @value)}}
+>
+{{yield}}
+</label>

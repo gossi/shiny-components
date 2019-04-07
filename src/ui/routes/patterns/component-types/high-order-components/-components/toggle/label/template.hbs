@@ -1,1 +1,7 @@
-<label for={{@for}} onclick={{action @invoke @value}} ...attributes>{{yield}}</label>
+<label
+  for={{@for}}
+  {{on "click" (bind @invoke @value)}}
+  ..attributes
+>
+{{yield}}
+</label>

@@ -1,13 +1,13 @@
 <div>
   <ul local-class="tabbar">
     {{#each this.pages as |page|}}
-      <li local-class={{if (eq this.activePage page) 'active'}} onclick={{bind this.activate page}}>{{page.title}}</li>
+      <li local-class={{if (eq this.activePage page) 'active'}} {{on "click" (bind this.activate page)}}>{{page.title}}</li>
     {{/each}}
   </ul>
 
   <div local-class="tabcontainer">
     {{yield (hash
-      page=(component 'page' parent=this)
+      Page=(component 'page' parent=this)
     )}}
   </div>
 </div>

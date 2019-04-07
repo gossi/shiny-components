@@ -14,21 +14,20 @@
   <ul>
     <li>{{#link-to 'research'}}Research{{/link-to}}</li>
     <li class="section">Best Practices</li>
-    <li>{{#link-to 'best-practices.sparkles'}}Sparkles{{/link-to}}</li>
-    <li>{{#link-to 'best-practices.singel'}}Singel{{/link-to}}</li>
-    <li>{{#link-to 'best-practices.component-classification'}}Component Classification{{/link-to}}</li>
-    <li>{{#link-to 'best-practices.naming-conventions'}}Naming Conventions{{/link-to}}</li>
+    <li><LinkTo @route="best-practices.singel">Singel</LinkTo></li>
+    <li><LinkTo @route="best-practices.component-classification">Component Classification</LinkTo></li>
+    <li><LinkTo @route="best-practices.naming-conventions">Naming Conventions</LinkTo></li>
 
     <li class="section">Patterns</li>
-    <li class="topic">{{#link-to 'patterns.component-types'}}Component Types{{/link-to}}</li>
-    <li>{{#link-to 'patterns.component-types.presentational-components'}}Presentational Components{{/link-to}}</li>
-    <li>{{#link-to 'patterns.component-types.contextual-components'}}Contextual Components{{/link-to}}</li>
-    <li>{{#link-to 'patterns.component-types.container-components'}}Container Components{{/link-to}}</li>
-    <li>{{#link-to 'patterns.component-types.high-order-components'}}High-Order-Components{{/link-to}}</li>
-    <li class="topic">{{#link-to 'patterns'}}Composites{{/link-to}}</li>
-    <li>{{#link-to 'patterns.composites.inheritance'}}Inheritance{{/link-to}}</li>
-    <li>{{#link-to 'patterns.composites.composition'}}Composition{{/link-to}}</li>
-    <li class="topic">{{#link-to 'patterns.dom-api'}}DOM API{{/link-to}}</li>
+    <li class="topic"><LinkTo @route="patterns.component-types">Component Types</LinkTo></li>
+    <li><LinkTo @route="patterns.presentational-components">Presentational Components</LinkTo></li>
+    <li><LinkTo @route="patterns.contextual-components">Contextual Components</LinkTo></li>
+    <li><LinkTo @route="patterns.container-components">Container Components</LinkTo></li>
+    <li><LinkTo @route="patterns.high-order-components">High-Order-Components</LinkTo></li>
+    <li class="topic"><LinkTo @route="patterns">Composite</LinkTo></li>
+    <li><LinkTo @route="patterns.inheritance">Inheritance</LinkTo></li>
+    <li><LinkTo @route="patterns.composition">Composition</LinkTo></li>
+    <li class="topic"><LinkTo @route="patterns.dom-api">DOM API</LinkTo></li>
     <li>Loosly Coupled</li>
     <li>Strongly Coupled</li>
   </ul>
